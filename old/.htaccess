@@ -1,0 +1,43 @@
+# COMPRESSION
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript application/json
+
+
+# REWRITES
+
+RewriteEngine On
+
+# Let the old ScheduleMaker handle Resig's schedules for now
+#RewriteCond %{QUERY_STRING} ^mode=old&id=(.*)$ [NC]
+RewriteRule ^schedule.php$ http://schedule-old.csh.rit.edu/schedule.php [NC,L,R=302]
+
+# Legacy Rewrites from previous version
+RewriteCond %{QUERY_STRING} ^id=(.*)$ [NC]
+RewriteRule ^schedule.php$ /schedule/%1? [NC,L,R=302]
+RewriteRule ^(generate|roulette|search|status).php$ /$1 [R=302,L]
+
+# Rewrite any request that wants json to the api directory
+RewriteCond %{HTTP:Accept} application/json [NC]
+RewriteRule ^(schedule|generate|entity|search|status|rmp)(?:/([^/]*))*$ api/$1.php [L]
+RewriteRule ^schedule/[^/]*/ical$ api/schedule.php [L]
+RewriteRule ^img/schedules/[^/]*.png$ api/img.php [L]
+
+# Don't rewrite files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite everything else to index.html to allow html5 state links
+RewriteRule ^ index.php [L]
+
+
+# CACHING
+
+# Set max-age one year in the future for all static assets
+# Allow caching for all assets
+<FilesMatch "\.(js|css|png|jpg|html)$">
+    Header set Cache-Control "max-age=29030400, public"
+    Header unset ETag
+    FileETag None
+    ExpiresActive On
+    ExpiresDefault A29030400
+</FilesMatch>
