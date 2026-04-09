@@ -1,73 +1,112 @@
 package api
 
 import (
+	"strings"
 	"testing"
+	"time"
 )
 
-// Schedule is the Go equivalent of the PHP API\Schedule class
-type Schedule struct {
-	// In a real implementation, we would mock dependencies like dbConn and s3ImageManager
+// newScheduleHarness can be registered by the Go implementation to run this
+// parity suite against real code. Tests fail until this harness is registered.
+var newScheduleHarness func(t *testing.T) scheduleHarness
+
+type scheduleHarness interface {
+	ICalFormatTime(minutes int) string
+	HashTime(slot TimeSlot, bldgStyle string) string
+	GenerateICal(schedule Schedule, courses []Course, termStart time.Time, termEnd time.Time, now time.Time, httpRoot string) (string, error)
 }
 
-// TimeSlot represents a single time entry in a schedule
-type TimeSlot struct {
-	Day   int    `json:"day"`
-	Start int    `json:"start"`
-	End   int    `json:"end"`
-	Bldg  map[string]string `json:"bldg"` // Map of building style to name
-	Room  string `json:"room"`
+func requireScheduleHarness(t *testing.T) scheduleHarness {
+	t.Helper()
+	if newScheduleHarness == nil {
+		t.Fatalf("schedule parity harness is not registered: register newScheduleHarness in implementation tests")
+	}
+	return newScheduleHarness(t)
 }
 
-// Course represents a course entry in a schedule
-type Course struct {
-	CourseNum string     `json:"courseNum"`
-	Title     string     `json:"title"`
-	Times     []TimeSlot `json:"times"`
+func TestSchedule_ICalFormatTime_ParityCases(t *testing.T) {
+	h := requireScheduleHarness(t)
+
+	tests := []struct {
+		minutes int
+		want    string
+	}{
+		{0, "000000"},
+		{60, "010000"},
+		{750, "123000"},
+		{1439, "235900"},
+		{1440, "000000"}, // wraps midnight like PHP modulo behavior
+	}
+
+	for _, tc := range tests {
+		got := h.ICalFormatTime(tc.minutes)
+		if got != tc.want {
+			t.Fatalf("ICalFormatTime(%d) = %q, want %q", tc.minutes, got, tc.want)
+		}
+	}
 }
 
-// ScheduleData represents the full schedule object
-type ScheduleData struct {
-	Courses   []Course `json:"courses"`
-	StartTime int      `json:"startTime"`
-	EndTime   int      `json:"endTime"`
-	StartDay  int      `json:"startDay"`
-	EndDay    int      `json:"endDay"`
-	Building  string   `json:"building"`
-	Quarter   string   `json:"quarter"`
-	Image     bool     `json:"image"`
+func TestSchedule_HashTime_UsesBldgStyle(t *testing.T) {
+	h := requireScheduleHarness(t)
+
+	slot := TimeSlot{
+		Day:   2,
+		Start: 540,
+		End:   600,
+		Bldg: map[string]string{
+			"code":   "GOL",
+			"number": "070",
+		},
+		Room: "1410",
+	}
+
+	if got := h.HashTime(slot, "code"); got != "540-600-GOL-1410" {
+		t.Fatalf("HashTime(code) = %q, want %q", got, "540-600-GOL-1410")
+	}
+	if got := h.HashTime(slot, "number"); got != "540-600-070-1410" {
+		t.Fatalf("HashTime(number) = %q, want %q", got, "540-600-070-1410")
+	}
 }
 
-// Mocking helper functions/methods to simulate PHP behavior
-func (s *Schedule) icalFormatTime(minutes int) string {
-	hr := (minutes / 60) % 24
-	min := minutes % 60
-	return string(rune(hr)) // Placeholder implementation
-}
+func TestSchedule_GenerateICal_CoreShape(t *testing.T) {
+	h := requireScheduleHarness(t)
 
-func TestSchedule_icalFormatTime(t *testing.T) {
-	// This is a placeholder test for the private helper logic
-	// In the real Go code, we'd test the actual implementation.
-	t.Log("TestSchedule_icalFormatTime: verifying time formatting logic")
-}
+	s := Schedule{BldgStyle: "code", Term: "20241"}
+	courses := []Course{
+		{
+			CourseNum: "CSCI-141-01",
+			Title:     "Computer Science I",
+			Times: []TimeSlot{
+				{Day: 1, Start: 540, End: 590, Bldg: map[string]string{"code": "GOL"}, Room: "1400"},
+				{Day: 3, Start: 540, End: 590, Bldg: map[string]string{"code": "GOL"}, Room: "1400"},
+			},
+		},
+		{CourseNum: "non", Title: "Gym", Times: []TimeSlot{{Day: 2, Start: 600, End: 650}}},
+	}
 
-func TestSchedule_hashTime(t *testing.T) {
-	// Placeholder for testing hashTime logic
-	t.Log("TestSchedule_hashTime: verifying time hashing logic")
-}
+	termStart := time.Date(2026, time.January, 12, 0, 0, 0, 0, time.UTC)
+	termEnd := time.Date(2026, time.May, 1, 0, 0, 0, 0, time.UTC)
+	now := time.Date(2026, time.January, 1, 10, 0, 0, 0, time.UTC)
 
-func TestSchedule_generateIcal(t *testing.T) {
-	// This test would verify the generation of the iCal string format
-	// given a specific ScheduleData object.
-	t.Log("TestSchedule_generateIcal: verifying iCal string generation")
-}
+	ical, err := h.GenerateICal(s, courses, termStart, termEnd, now, "example.edu")
+	if err != nil {
+		t.Fatalf("GenerateICal() error = %v", err)
+	}
 
-func TestSchedule_getScheduleFromId(t *testing.T) {
-	// This test would verify the retrieval and construction of a schedule
-	// from a database ID, including courses and non-courses.
-	t.Log("TestSchedule_getScheduleFromId: verifying schedule reconstruction from DB")
-}
-
-func TestSchedule_renderSvg(t *testing.T) {
-	// This test would verify the SVG to PNG conversion and S3 upload logic.
-	t.Log("TestSchedule_renderSvg: verifying SVG processing and upload")
+	required := []string{
+		"BEGIN:VCALENDAR",
+		"VERSION:2.0",
+		"METHOD:PUBLISH",
+		"BEGIN:VEVENT",
+		"SUMMARY:Computer Science I (CSCI-141-01)",
+		"LOCATION:GOL-1400",
+		"RRULE:FREQ=WEEKLY;INTERVAL=1;WKST=SU;BYDAY=MO,WE;UNTIL=20260501",
+		"SUMMARY:Gym",
+		"END:VCALENDAR",
+	}
+	for _, token := range required {
+		if !strings.Contains(ical, token) {
+			t.Fatalf("GenerateICal() output missing token %q", token)
+		}
+	}
 }
