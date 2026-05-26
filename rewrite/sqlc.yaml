@@ -1,0 +1,12 @@
+version: "2"
+sql:
+  - engine: mysql
+    queries: internal/db/sqlc/query.sql
+    schema:
+      - internal/db/migrations
+      - internal/db/temp
+    gen:
+      go:
+        package: db
+        out: internal/db/sqlc
+        emit_interface: true # generate Querier interface
