@@ -7,7 +7,6 @@ import (
 	"database/sql"
 	"log"
 	"os"
-	"time"
 
 	"rewrite/internal/config"
 	"rewrite/internal/tools"
@@ -24,6 +23,6 @@ func main() {
 	}
 	p := tools.NewParser(ctx, dbConn, os.Args)
 
-	p.ParseDumps(ctx, &cfg, dbConn)
-	p.ParseDB(ctx, dbConn)
+	p.ParseDumps(ctx, &cfg)
+	p.ParseDB(ctx)
 }

@@ -18,7 +18,7 @@ import (
 )
 
 type Parser struct {
-	dbConn          *sql.DB
+	db              *sql.DB
 	debugMode       bool
 	quietMode       bool
 	timeStarted     int64
@@ -35,7 +35,7 @@ func NewParser(ctx context.Context, dbConn *sql.DB, arguments []string) *Parser 
 	debugMode := slices.Contains(arguments, "-d")
 	quietMode := slices.Contains(arguments, "-q")
 	p := &Parser{
-		dbConn:          dbConn,
+		db:              dbConn,
 		debugMode:       debugMode,
 		quietMode:       quietMode,
 		timeStarted:     time.Now().Unix(),
@@ -58,15 +58,15 @@ func NewParser(ctx context.Context, dbConn *sql.DB, arguments []string) *Parser 
 func (p *Parser) cleanup(ctx context.Context) {
 	p.debug("... Cleaning up temporary tables")
 
-	if _, err := p.dbConn.ExecContext(ctx, "DROP TABLE classes"); err != nil {
+	if _, err := p.db.ExecContext(ctx, "DROP TABLE classes"); err != nil {
 		fmt.Fprintln(os.Stderr, "*** Failed to drop table classes (ignored)")
 		fmt.Fprintf(os.Stderr, "    %v\n", err)
 	}
-	if _, err := p.dbConn.ExecContext(ctx, "DROP TABLE meeting"); err != nil {
+	if _, err := p.db.ExecContext(ctx, "DROP TABLE meeting"); err != nil {
 		fmt.Fprintln(os.Stderr, "*** Failed to drop table meeting (ignored)")
 		fmt.Fprintf(os.Stderr, "    %v\n", err)
 	}
-	if _, err := p.dbConn.ExecContext(ctx, "DROP TABLE instructors"); err != nil {
+	if _, err := p.db.ExecContext(ctx, "DROP TABLE instructors"); err != nil {
 		fmt.Fprintln(os.Stderr, "*** Failed to drop table instructor (ignored)")
 		fmt.Fprintf(os.Stderr, "    %v\n", err)
 	}
@@ -110,9 +110,9 @@ type insertOrUpdateCourseParams struct {
 
 func (p *Parser) insertOrUpdateCourse(ctx context.Context, prm insertOrUpdateCourseParams) (int, error) {
 	query := "CALL InsertOrUpdateCourse(?, 0000, ?, ?, ?, ?, ?)"
-	rows, err := p.dbConn.QueryContext(ctx, query, prm.quarter, prm.classCode, prm.course, prm.credits, prm.title, prm.description)
+	rows, err := p.db.QueryContext(ctx, query, prm.quarter, prm.classCode, prm.course, prm.credits, prm.title, prm.description)
 	if err != nil {
-		rows, err = p.dbConn.QueryContext(ctx, query, prm.quarter, prm.departCode, prm.course, prm.credits, prm.title, prm.description)
+		rows, err = p.db.QueryContext(ctx, query, prm.quarter, prm.departCode, prm.course, prm.credits, prm.title, prm.description)
 		if err != nil {
 			return 0, err
 		}
@@ -167,7 +167,7 @@ type insertOrUpdateSectionParams struct {
 
 func (p *Parser) insertOrUpdateSection(ctx context.Context, prm insertOrUpdateSectionParams) (int, error) {
 	query := "CALL InsertOrUpdateSection(?, ?, ?, ?, ?, ?, ?, ?)"
-	rows, err := p.dbConn.QueryContext(ctx, query, prm.courseID, prm.section, prm.title, prm.instructor, prm.sectionType, prm.status, prm.maxEnroll, prm.curEnroll)
+	rows, err := p.db.QueryContext(ctx, query, prm.courseID, prm.section, prm.title, prm.instructor, prm.sectionType, prm.status, prm.maxEnroll, prm.curEnroll)
 	if err != nil {
 		return 0, err
 	}
@@ -225,7 +225,7 @@ func (p *Parser) getTempSections(ctx context.Context, courseNum, offerNum, term 
 	query := `SELECT class_section,descr,topic,enrl_stat,class_stat,class_type,enrl_cap,enrl_tot,instruction_mode,schedule_print
 		FROM classes WHERE crse_id=? AND crse_offer_nbr=? AND strm=? AND session_code=?`
 
-	rows, err := p.dbConn.QueryContext(ctx, query, courseNum, offerNum, term, sessionCode)
+	rows, err := p.db.QueryContext(ctx, query, courseNum, offerNum, term, sessionCode)
 	if err != nil {
 		return nil, err
 	}
@@ -249,7 +249,7 @@ type LineProcessor func([]string) ([]string, bool)
 func (p *Parser) fileToTempTable(ctx context.Context, tableName string, file *os.File, fields int, fileSize int64, procFunc LineProcessor) error {
 	procChars := 0   // total number of characters read from file so far, only used in debug mode
 	lastPercent := 0 // last percentage printed in debug mode
-	p.debug(fmt.Sprintf("... Copying %s file to temporary table\n0%", tableName), false)
+	p.debug(fmt.Sprintf("... Copying %s file to temporary table\n0%%", tableName), false)
 
 	scanner := bufio.NewScanner(file)
 	decoder := charmap.ISO8859_1.NewDecoder()
@@ -304,7 +304,7 @@ func (p *Parser) fileToTempTable(ctx context.Context, tableName string, file *os
 		// Build a query
 		query := fmt.Sprintf("INSERT INTO %s VALUES(%s)", tableName, getPlaceholders(fields))
 
-		_, err = p.dbConn.ExecContext(ctx, query, sliceToAny(lineSplit)...)
+		_, err = p.db.ExecContext(ctx, query, sliceToAny(lineSplit)...)
 		if err != nil {
 			fmt.Printf("*** Failed to insert %s\n", tableName)
 			fmt.Printf("    %s\n", err.Error())
