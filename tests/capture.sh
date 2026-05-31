@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 #
 # Bring up the capture stack (DB + PHP/Angular app + recording proxy) and open the
-# app in a browser so you can click around and record golden fixtures. Unlike
-# run.sh, this leaves the stack RUNNING when it returns — tear it down yourself when
-# you're done:
-#
-#   podman compose -f tests/docker-compose.yml down       # keeps the seeded DB
-#   podman compose -f tests/docker-compose.yml down -v     # also wipes the DB
+# app in a browser so you can click around and record golden fixtures. The script
+# STAYS RUNNING; press Ctrl-C to stop and tear the containers down. The DB volume is
+# preserved (down without -v), so the seed isn't re-imported next time.
 #
 # Uses podman by default; override with DOCKER=docker ./tests/capture.sh
 
@@ -17,6 +14,17 @@ cd "$(dirname "$0")/.."   # repo root
 DOCKER="${DOCKER:-podman}"
 COMPOSE="$DOCKER compose -f tests/docker-compose.yml"
 URL="http://localhost:9000"
+
+cleaned=0
+cleanup() {
+  [ "$cleaned" = 1 ] && return
+  cleaned=1
+  echo
+  echo "==> stopping stack (keeping the DB volume)"
+  $COMPOSE down   # no -v: preserve db-data so we don't re-seed next run
+}
+trap 'cleanup; exit 0' INT TERM
+trap cleanup EXIT
 
 echo "==> starting stack (db + app + proxy)"
 $COMPOSE up -d || exit 1
@@ -43,7 +51,8 @@ Capture stack is running.
   * Error/edge cases:   cd tests && PROXY=$URL EDGE_TERM=20261 ./edge-cases.sh
   * See recorded goldens: ls tests/fixtures/
 
-When finished, stop the stack:
-  $COMPOSE down        # keeps the seeded DB for next time
-  $COMPOSE down -v     # also wipes the DB
+Press Ctrl-C to stop and tear the stack down (the DB volume is preserved).
 EOF
+
+# Stay up until interrupted; the trap tears the stack down on Ctrl-C.
+while true; do sleep 1; done
