@@ -21,6 +21,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)
 	}
+	if err := dbConn.PingContext(ctx); err != nil {
+		log.Fatalf("Failed to ping database: %v", err)
+	}
 	p := tools.NewParser(ctx, dbConn, os.Args)
 
 	p.ParseDumps(ctx, &cfg)

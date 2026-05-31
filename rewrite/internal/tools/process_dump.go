@@ -210,7 +210,7 @@ func (p *Parser) ParseDB(ctx context.Context) {
 		fmt.Printf("    %v\n", err)
 		fmt.Printf("    %s\n", replacePlaceholders(q, quarters))
 		p.failures++
-		os.Exit(0)
+		os.Exit(1)
 	}
 
 	// Update all the school
@@ -266,7 +266,7 @@ func (p *Parser) ParseDB(ctx context.Context) {
 	}
 	procCourses := 0
 	var totCourses int
-	err = p.db.QueryRowContext(ctx, "SELECT COUNT(*) FROM classes WHERE strm > 20130").Scan(&totCourses)
+	err = p.db.QueryRowContext(ctx, "SELECT COUNT(*) FROM classes WHERE strm < 20130").Scan(&totCourses)
 	if err != nil {
 		p.Halt(ctx, "Error: Failed to count courses", err)
 	}
@@ -292,11 +292,11 @@ func (p *Parser) ParseDB(ctx context.Context) {
 		if len(strmStr) != 4 {
 			p.Halt(ctx, fmt.Sprintf("Error: Invalid strm value %d", strm))
 		}
-		strm, _ = strconv.Atoi(strmStr[0:3] + "0" + strmStr[3:4])
+		qtr, _ := strconv.Atoi(strmStr[0:3] + "0" + strmStr[3:4])
 
 		// Insert or update the course
 		prm := insertOrUpdateCourseParams{
-			quarter:     strm,
+			quarter:     qtr,
 			departCode:  acadOrg,
 			classCode:   subject,
 			course:      catalogNbr,
@@ -306,7 +306,7 @@ func (p *Parser) ParseDB(ctx context.Context) {
 		}
 		courseId, err := p.insertOrUpdateCourse(ctx, prm)
 		if err != nil {
-			fmt.Printf("    *** Error: Failed to update %d %s-%s", strm, subject, catalogNbr)
+			fmt.Printf("    *** Error: Failed to update %d %s-%s", qtr, subject, catalogNbr)
 			fmt.Printf("    courseID: %v", courseId)
 			fmt.Printf("    %v", err)
 			p.failures++
@@ -390,10 +390,10 @@ func (p *Parser) ParseDB(ctx context.Context) {
 			}
 
 			// Select all the meeting times of the section
-			q = `SELECT bldg, room_nbr, meeting_time_start
-				meeting_time_end, mon, tues, wed, thurs, fri
-				sat, sun FROM meeting WHERE crse_id=? AND 
-				crse_offer_nbr=? AND strm=? AND session_code=? 
+			q = `SELECT bldg, room_nbr, meeting_time_start,
+				meeting_time_end, mon, tues, wed, thurs, fri,
+				sat, sun FROM meeting WHERE crse_id=? AND
+				crse_offer_nbr=? AND strm=? AND session_code=?
 				AND class_section=?`
 			timeResult, err := p.db.QueryContext(ctx, q, crseID, crseOfferNbr, strm, sessionCode, sect.ClassSection)
 			if err != nil {
