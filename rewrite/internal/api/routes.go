@@ -34,7 +34,7 @@ func NewHandler(cfg *config.Config) http.Handler {
 	mux.HandleFunc("GET /api/schedule/{hex}/old", h.handleScheduleOld)
 	mux.HandleFunc("GET /api/schedule/{hex}", h.handleScheduleGet)
 
-	mux.HandleFunc("GET /img/schedules/{hex}.png", h.handleScheduleImage)
+	mux.HandleFunc("GET /img/schedules/", h.handleScheduleImage)
 
 	mux.HandleFunc("POST /api/rmp", h.handleRMP)
 

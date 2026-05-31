@@ -13,7 +13,7 @@ func main() {
 	cfg := config.Load()
 
 	srv := &http.Server{
-		Addr:         cfg.HttpRootAddress,
+		Addr:         cfg.Addr + ":" + cfg.Port,
 		Handler:      api.NewHandler(&cfg),
 		WriteTimeout: time.Second * 30,
 		ReadTimeout:  time.Second * 10,
