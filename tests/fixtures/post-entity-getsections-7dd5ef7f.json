@@ -1,0 +1,16 @@
+{
+  "method": "POST",
+  "path": "/entity/getSections",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "course=999999999",
+  "status": 200,
+  "respBody": {
+    "sections": []
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:55:51Z",
+    "upstream": "php"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/generate/getCourseOpts",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "course=ACCT-110\u0026term=20261",
+  "status": 200,
+  "respBody": {
+    "error": "php",
+    "msg": "Undefined index: ignoreFull",
+    "num": 8,
+    "file": "\/var\/www\/html\/api\/generate.php",
+    "linenum": 110
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:38:15Z",
+    "upstream": "php"
+  }
+}

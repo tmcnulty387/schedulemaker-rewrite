@@ -1,0 +1,45 @@
+{
+  "method": "POST",
+  "path": "/generate/getMatchingSchedules",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "courseCount=1\u0026courses1Opt[]=382493\u0026nonCourseCount=0\u0026noCourseCount=0",
+  "status": 200,
+  "respBody": {
+    "schedules": [
+      [
+        {
+          "title": "Financial Accounting",
+          "instructor": "Kean Wu",
+          "curenroll": "11",
+          "maxenroll": "35",
+          "courseNum": "ACCT-110-05",
+          "courseParentNum": "ACCT-110",
+          "courseId": "180135",
+          "id": "382493",
+          "online": false,
+          "credits": "3",
+          "times": [
+            {
+              "bldg": {
+                "code": "LOW",
+                "number": "12"
+              },
+              "room": "3225",
+              "day": "3",
+              "start": "1050",
+              "end": "1220",
+              "off_campus": false
+            }
+          ],
+          "courseIndex": 1
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:38:15Z",
+    "upstream": "php"
+  }
+}

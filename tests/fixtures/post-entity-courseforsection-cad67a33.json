@@ -1,0 +1,39 @@
+{
+  "method": "POST",
+  "path": "/entity/courseForSection",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "id=382493",
+  "status": 200,
+  "respBody": {
+    "title": "Financial Accounting",
+    "instructor": "Kean Wu",
+    "curenroll": "11",
+    "maxenroll": "35",
+    "courseNum": "ACCT-110-05",
+    "courseParentNum": "ACCT-110",
+    "courseId": "180135",
+    "id": "382493",
+    "online": false,
+    "credits": "3",
+    "description": "An introduction to the way in which corporations report their financial performance to interested stakeholders such as investors and creditors.  Coverage of the accounting cycle, generally accepted accounting principles, and analytical tools help students become informed users of financial statements.",
+    "times": [
+      {
+        "bldg": {
+          "code": "LOW",
+          "number": "12"
+        },
+        "room": "3225",
+        "day": "3",
+        "start": "1050",
+        "end": "1220",
+        "off_campus": false
+      }
+    ]
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:38:15Z",
+    "upstream": "php"
+  }
+}

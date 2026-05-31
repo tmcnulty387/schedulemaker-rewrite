@@ -1,0 +1,233 @@
+{
+  "method": "GET",
+  "path": "/status",
+  "query": "",
+  "status": 200,
+  "respBody": [
+    {
+      "id": "4441",
+      "timeStarted": "1778236203",
+      "timeEnded": "1778239766",
+      "quartersAdded": "6",
+      "coursesAdded": "0",
+      "coursesUpdated": "15250",
+      "sectionsAdded": "4",
+      "sectionsUpdated": "31800",
+      "failures": "1091"
+    },
+    {
+      "id": "4440",
+      "timeStarted": "1778149802",
+      "timeEnded": "1778154018",
+      "quartersAdded": "6",
+      "coursesAdded": "0",
+      "coursesUpdated": "15249",
+      "sectionsAdded": "0",
+      "sectionsUpdated": "31799",
+      "failures": "1091"
+    },
+    {
+      "id": "4439",
+      "timeStarted": "1778063402",
+      "timeEnded": "1778066791",
+      "quartersAdded": "6",
+      "coursesAdded": "1",
+      "coursesUpdated": "15253",
+      "sectionsAdded": "7",
+      "sectionsUpdated": "31798",
+      "failures": "1092"
+    },
+    {
+      "id": "4438",
+      "timeStarted": "1777977002",
+      "timeEnded": "1777979127",
+      "quartersAdded": "6",
+      "coursesAdded": "2",
+      "coursesUpdated": "15264",
+      "sectionsAdded": "6",
+      "sectionsUpdated": "31821",
+      "failures": "1082"
+    },
+    {
+      "id": "4437",
+      "timeStarted": "1777890603",
+      "timeEnded": "1777893308",
+      "quartersAdded": "6",
+      "coursesAdded": "0",
+      "coursesUpdated": "15265",
+      "sectionsAdded": "0",
+      "sectionsUpdated": "31822",
+      "failures": "1055"
+    },
+    {
+      "id": "4436",
+      "timeStarted": "1777804203",
+      "timeEnded": "1777806745",
+      "quartersAdded": "6",
+      "coursesAdded": "0",
+      "coursesUpdated": "15265",
+      "sectionsAdded": "0",
+      "sectionsUpdated": "31822",
+      "failures": "1055"
+    },
+    {
+      "id": "4435",
+      "timeStarted": "1777717803",
+      "timeEnded": "1777721111",
+      "quartersAdded": "6",
+      "coursesAdded": "1",
+      "coursesUpdated": "15264",
+      "sectionsAdded": "5",
+      "sectionsUpdated": "31817",
+      "failures": "1055"
+    },
+    {
+      "id": "4434",
+      "timeStarted": "1777631402",
+      "timeEnded": "1777635829",
+      "quartersAdded": "6",
+      "coursesAdded": "2",
+      "coursesUpdated": "15263",
+      "sectionsAdded": "3",
+      "sectionsUpdated": "31814",
+      "failures": "1055"
+    },
+    {
+      "id": "4433",
+      "timeStarted": "1777545002",
+      "timeEnded": "1777548866",
+      "quartersAdded": "6",
+      "coursesAdded": "5",
+      "coursesUpdated": "15261",
+      "sectionsAdded": "9",
+      "sectionsUpdated": "31809",
+      "failures": "1055"
+    },
+    {
+      "id": "4432",
+      "timeStarted": "1777458603",
+      "timeEnded": "1777462908",
+      "quartersAdded": "6",
+      "coursesAdded": "5",
+      "coursesUpdated": "15257",
+      "sectionsAdded": "6",
+      "sectionsUpdated": "31806",
+      "failures": "1055"
+    },
+    {
+      "id": "4431",
+      "timeStarted": "1777372202",
+      "timeEnded": "1777376003",
+      "quartersAdded": "6",
+      "coursesAdded": "1",
+      "coursesUpdated": "15261",
+      "sectionsAdded": "1",
+      "sectionsUpdated": "31811",
+      "failures": "1055"
+    },
+    {
+      "id": "4430",
+      "timeStarted": "1777285803",
+      "timeEnded": "1777289055",
+      "quartersAdded": "6",
+      "coursesAdded": "0",
+      "coursesUpdated": "15261",
+      "sectionsAdded": "4",
+      "sectionsUpdated": "31806",
+      "failures": "1055"
+    },
+    {
+      "id": "4429",
+      "timeStarted": "1777199402",
+      "timeEnded": "1777202507",
+      "quartersAdded": "6",
+      "coursesAdded": "0",
+      "coursesUpdated": "15260",
+      "sectionsAdded": "1",
+      "sectionsUpdated": "31805",
+      "failures": "1047"
+    },
+    {
+      "id": "4428",
+      "timeStarted": "1777113002",
+      "timeEnded": "1777116847",
+      "quartersAdded": "6",
+      "coursesAdded": "0",
+      "coursesUpdated": "15261",
+      "sectionsAdded": "0",
+      "sectionsUpdated": "31806",
+      "failures": "1047"
+    },
+    {
+      "id": "4427",
+      "timeStarted": "1777026602",
+      "timeEnded": "1777030490",
+      "quartersAdded": "6",
+      "coursesAdded": "1",
+      "coursesUpdated": "15260",
+      "sectionsAdded": "9",
+      "sectionsUpdated": "31797",
+      "failures": "1047"
+    },
+    {
+      "id": "4426",
+      "timeStarted": "1776940202",
+      "timeEnded": "1776943571",
+      "quartersAdded": "6",
+      "coursesAdded": "6",
+      "coursesUpdated": "15252",
+      "sectionsAdded": "16",
+      "sectionsUpdated": "31781",
+      "failures": "1047"
+    },
+    {
+      "id": "4425",
+      "timeStarted": "1776853802",
+      "timeEnded": "1776858305",
+      "quartersAdded": "6",
+      "coursesAdded": "2",
+      "coursesUpdated": "15249",
+      "sectionsAdded": "5",
+      "sectionsUpdated": "31776",
+      "failures": "1047"
+    },
+    {
+      "id": "4424",
+      "timeStarted": "1776767403",
+      "timeEnded": "1776771462",
+      "quartersAdded": "6",
+      "coursesAdded": "3",
+      "coursesUpdated": "15247",
+      "sectionsAdded": "8",
+      "sectionsUpdated": "31774",
+      "failures": "1011"
+    },
+    {
+      "id": "4423",
+      "timeStarted": "1776681002",
+      "timeEnded": "1776683529",
+      "quartersAdded": "6",
+      "coursesAdded": "0",
+      "coursesUpdated": "15246",
+      "sectionsAdded": "0",
+      "sectionsUpdated": "31773",
+      "failures": "1011"
+    },
+    {
+      "id": "4422",
+      "timeStarted": "1776594602",
+      "timeEnded": "1776597565",
+      "quartersAdded": "6",
+      "coursesAdded": "4",
+      "coursesUpdated": "15242",
+      "sectionsAdded": "14",
+      "sectionsUpdated": "31759",
+      "failures": "1011"
+    }
+  ],
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:38:15Z",
+    "upstream": "php"
+  }
+}

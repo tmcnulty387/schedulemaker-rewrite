@@ -1,0 +1,1373 @@
+{
+  "method": "POST",
+  "path": "/search/find",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "term=20261\u0026college=2\u0026department=318",
+  "status": 200,
+  "respBody": [
+    {
+      "title": "Financial Accounting",
+      "instructor": "Suzanne McCaffrey",
+      "curenroll": "35",
+      "maxenroll": "35",
+      "courseNum": "ACCT-110-04",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "382492",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3115",
+          "day": "1",
+          "start": "600",
+          "end": "650",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3115",
+          "day": "3",
+          "start": "600",
+          "end": "650",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3115",
+          "day": "5",
+          "start": "600",
+          "end": "650",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Kean Wu",
+      "curenroll": "11",
+      "maxenroll": "35",
+      "courseNum": "ACCT-110-05",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "382493",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3225",
+          "day": "3",
+          "start": "1050",
+          "end": "1220",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Kean Wu",
+      "curenroll": "30",
+      "maxenroll": "30",
+      "courseNum": "ACCT-110-06",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "382494",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "ON",
+            "number": "ON"
+          },
+          "room": "LINE",
+          "day": "2",
+          "start": "930",
+          "end": "1005",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "ON",
+            "number": "ON"
+          },
+          "room": "LINE",
+          "day": "4",
+          "start": "930",
+          "end": "1005",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Peter Schmidt",
+      "curenroll": "2",
+      "maxenroll": "37",
+      "courseNum": "ACCT-110-800",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390048",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "ZAG",
+            "number": "ZAG"
+          },
+          "room": "10",
+          "day": "1",
+          "start": "480",
+          "end": "560",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "ZAG",
+            "number": "ZAG"
+          },
+          "room": "10",
+          "day": "3",
+          "start": "480",
+          "end": "560",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Peter Schmidt",
+      "curenroll": "4",
+      "maxenroll": "37",
+      "courseNum": "ACCT-110-801",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390049",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "ZAG",
+            "number": "ZAG"
+          },
+          "room": "10",
+          "day": "1",
+          "start": "570",
+          "end": "650",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "ZAG",
+            "number": "ZAG"
+          },
+          "room": "10",
+          "day": "3",
+          "start": "570",
+          "end": "650",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Peter Schmidt",
+      "curenroll": "5",
+      "maxenroll": "37",
+      "courseNum": "ACCT-110-802",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390050",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "ZAG",
+            "number": "ZAG"
+          },
+          "room": "10",
+          "day": "2",
+          "start": "660",
+          "end": "722",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "ZAG",
+            "number": "ZAG"
+          },
+          "room": "10",
+          "day": "4",
+          "start": "660",
+          "end": "722",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Peter Schmidt",
+      "curenroll": "2",
+      "maxenroll": "37",
+      "courseNum": "ACCT-110-803",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390051",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "ZAG",
+            "number": "ZAG"
+          },
+          "room": "10",
+          "day": "2",
+          "start": "750",
+          "end": "830",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "ZAG",
+            "number": "ZAG"
+          },
+          "room": "10",
+          "day": "4",
+          "start": "750",
+          "end": "830",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Tonmoy Choudhury",
+      "curenroll": "8",
+      "maxenroll": "30",
+      "courseNum": "ACCT-110-600",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390052",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "630",
+          "end": "710",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "630",
+          "end": "710",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Amer Al Fadli",
+      "curenroll": "2",
+      "maxenroll": "30",
+      "courseNum": "ACCT-110-601",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390053",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "1",
+          "start": "540",
+          "end": "595",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "3",
+          "start": "540",
+          "end": "595",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "5",
+          "start": "540",
+          "end": "595",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Yueting Cui",
+      "curenroll": "4",
+      "maxenroll": "30",
+      "courseNum": "ACCT-110-602",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390054",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "1",
+          "start": "605",
+          "end": "660",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "3",
+          "start": "605",
+          "end": "660",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "5",
+          "start": "605",
+          "end": "660",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Yueting Cui",
+      "curenroll": "5",
+      "maxenroll": "30",
+      "courseNum": "ACCT-110-603",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390055",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "810",
+          "end": "890",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "810",
+          "end": "890",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "Amer Al Fadli",
+      "curenroll": "0",
+      "maxenroll": "30",
+      "courseNum": "ACCT-110-604",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "390056",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "1",
+          "start": "785",
+          "end": "865",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "3",
+          "start": "785",
+          "end": "865",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Accounting",
+      "instructor": "- To Be Determined",
+      "curenroll": "0",
+      "maxenroll": "30",
+      "courseNum": "ACCT-110-605",
+      "courseParentNum": "ACCT-110",
+      "courseId": "180135",
+      "id": "391422",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "990",
+          "end": "1070",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "990",
+          "end": "1070",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Management Accounting",
+      "instructor": "Suzanne McCaffrey",
+      "curenroll": "27",
+      "maxenroll": "35",
+      "courseNum": "ACCT-210-01",
+      "courseParentNum": "ACCT-210",
+      "courseId": "181566",
+      "id": "385833",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3245",
+          "day": "1",
+          "start": "540",
+          "end": "590",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3245",
+          "day": "3",
+          "start": "540",
+          "end": "590",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3245",
+          "day": "5",
+          "start": "540",
+          "end": "590",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Management Accounting",
+      "instructor": "Qian Song",
+      "curenroll": "17",
+      "maxenroll": "35",
+      "courseNum": "ACCT-210-02",
+      "courseParentNum": "ACCT-210",
+      "courseId": "181566",
+      "id": "385834",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1215",
+          "day": "2",
+          "start": "660",
+          "end": "735",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1215",
+          "day": "4",
+          "start": "660",
+          "end": "735",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Management Accounting",
+      "instructor": "Amer Al Fadli",
+      "curenroll": "26",
+      "maxenroll": "30",
+      "courseNum": "ACCT-210-600",
+      "courseParentNum": "ACCT-210",
+      "courseId": "181566",
+      "id": "390678",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "1",
+          "start": "670",
+          "end": "725",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "3",
+          "start": "670",
+          "end": "725",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "5",
+          "start": "670",
+          "end": "725",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Management Accounting",
+      "instructor": "Amer Al Fadli",
+      "curenroll": "20",
+      "maxenroll": "30",
+      "courseNum": "ACCT-210-601",
+      "courseParentNum": "ACCT-210",
+      "courseId": "181566",
+      "id": "390679",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "540",
+          "end": "620",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "540",
+          "end": "620",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Management Accounting",
+      "instructor": "Amer Al Fadli",
+      "curenroll": "30",
+      "maxenroll": "30",
+      "courseNum": "ACCT-210-603",
+      "courseParentNum": "ACCT-210",
+      "courseId": "181566",
+      "id": "390681",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "720",
+          "end": "800",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "720",
+          "end": "800",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Accounting Profession",
+      "instructor": "Julian Huenerfauth",
+      "curenroll": "32",
+      "maxenroll": "40",
+      "courseNum": "ACCT-305-01",
+      "courseParentNum": "ACCT-305",
+      "courseId": "182710",
+      "id": "388326",
+      "online": false,
+      "credits": "1",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1050",
+          "day": "2",
+          "start": "930",
+          "end": "1005",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Intermed. Financial Acctg. I",
+      "instructor": "Suzanne McCaffrey",
+      "curenroll": "28",
+      "maxenroll": "30",
+      "courseNum": "ACCT-360-01",
+      "courseParentNum": "ACCT-360",
+      "courseId": "182085",
+      "id": "386938",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "570",
+          "end": "645",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "570",
+          "end": "645",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Intermed. Fin Acctg.  II",
+      "instructor": "William Dresnack",
+      "curenroll": "17",
+      "maxenroll": "30",
+      "courseNum": "ACCT-365-01",
+      "courseParentNum": "ACCT-365",
+      "courseId": "180136",
+      "id": "382495",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1215",
+          "day": "2",
+          "start": "570",
+          "end": "645",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1215",
+          "day": "4",
+          "start": "570",
+          "end": "645",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Prsnl \u0026 Small Bus Taxation",
+      "instructor": "Philip Gelsomino",
+      "curenroll": "35",
+      "maxenroll": "35",
+      "courseNum": "ACCT-420-01",
+      "courseParentNum": "ACCT-420",
+      "courseId": "180129",
+      "id": "382482",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1135",
+          "day": "2",
+          "start": "660",
+          "end": "735",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1135",
+          "day": "4",
+          "start": "660",
+          "end": "735",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Prsnl \u0026 Small Bus Taxation",
+      "instructor": "Philip Gelsomino",
+      "curenroll": "7",
+      "maxenroll": "20",
+      "courseNum": "ACCT-420-02",
+      "courseParentNum": "ACCT-420",
+      "courseId": "180129",
+      "id": "391874",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1135",
+          "day": "2",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1135",
+          "day": "4",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Advanced Taxation",
+      "instructor": "John Striebich",
+      "curenroll": "17",
+      "maxenroll": "20",
+      "courseNum": "ACCT-440-01",
+      "courseParentNum": "ACCT-440",
+      "courseId": "180130",
+      "id": "382483",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3105",
+          "day": "4",
+          "start": "1050",
+          "end": "1220",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Accounting Information Systems",
+      "instructor": "Saiwu Lin",
+      "curenroll": "29",
+      "maxenroll": "30",
+      "courseNum": "ACCT-445-01",
+      "courseParentNum": "ACCT-445",
+      "courseId": "181260",
+      "id": "385150",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3135",
+          "day": "2",
+          "start": "840",
+          "end": "915",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3135",
+          "day": "4",
+          "start": "840",
+          "end": "915",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Auditing",
+      "instructor": "William Dresnack",
+      "curenroll": "20",
+      "maxenroll": "25",
+      "courseNum": "ACCT-490-01",
+      "courseParentNum": "ACCT-490",
+      "courseId": "180137",
+      "id": "382496",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "GLE",
+            "number": "09"
+          },
+          "room": "1129",
+          "day": "2",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "GLE",
+            "number": "09"
+          },
+          "room": "1129",
+          "day": "4",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Cost Mgmt. inTech Orgnztns",
+      "instructor": "Kimberly Foreman",
+      "curenroll": "0",
+      "maxenroll": "10",
+      "courseNum": "ACCT-500-01",
+      "courseParentNum": "ACCT-500",
+      "courseId": "181446",
+      "id": "385589",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3105",
+          "day": "3",
+          "start": "1050",
+          "end": "1220",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "AcctgforGovt\u0026NotfrPrftOrgnztns",
+      "instructor": "Suzanne McCaffrey",
+      "curenroll": "7",
+      "maxenroll": "20",
+      "courseNum": "ACCT-550-01",
+      "courseParentNum": "ACCT-550",
+      "courseId": "182086",
+      "id": "386939",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Accounting for Decision Makers",
+      "instructor": "Kelly Davis",
+      "curenroll": "12",
+      "maxenroll": "30",
+      "courseNum": "ACCT-603-01",
+      "courseParentNum": "ACCT-603",
+      "courseId": "180913",
+      "id": "384375",
+      "online": false,
+      "credits": "3"
+    },
+    {
+      "title": "Accounting for Decision Makers",
+      "instructor": "Kathleen Brady",
+      "curenroll": "12",
+      "maxenroll": "30",
+      "courseNum": "ACCT-603-02",
+      "courseParentNum": "ACCT-603",
+      "courseId": "180913",
+      "id": "384376",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "INS",
+            "number": "73"
+          },
+          "room": "1080",
+          "day": "2",
+          "start": "840",
+          "end": "915",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "INS",
+            "number": "73"
+          },
+          "room": "1080",
+          "day": "4",
+          "start": "840",
+          "end": "915",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Financial Reporting, Govt\/NFP",
+      "instructor": "Suzanne McCaffrey",
+      "curenroll": "5",
+      "maxenroll": "10",
+      "courseNum": "ACCT-650-01",
+      "courseParentNum": "ACCT-650",
+      "courseId": "183039",
+      "id": "388995",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "GLE",
+            "number": "09"
+          },
+          "room": "2139",
+          "day": "2",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "GLE",
+            "number": "09"
+          },
+          "room": "2139",
+          "day": "4",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Corp. Financial Reporting I",
+      "instructor": "Suzanne McCaffrey",
+      "curenroll": "0",
+      "maxenroll": "5",
+      "courseNum": "ACCT-704-01",
+      "courseParentNum": "ACCT-704",
+      "courseId": "180140",
+      "id": "382499",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1050",
+          "day": "2",
+          "start": "570",
+          "end": "645",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1050",
+          "day": "4",
+          "start": "570",
+          "end": "645",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Corp. Financial Reporting II",
+      "instructor": "William Dresnack",
+      "curenroll": "0",
+      "maxenroll": "5",
+      "courseNum": "ACCT-705-01",
+      "courseParentNum": "ACCT-705",
+      "courseId": "181323",
+      "id": "385275",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "570",
+          "end": "645",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "570",
+          "end": "645",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Advanced Topics in Auditing an",
+      "instructor": "William Dresnack",
+      "curenroll": "0",
+      "maxenroll": "10",
+      "courseNum": "ACCT-708-01",
+      "courseParentNum": "ACCT-708",
+      "courseId": "180138",
+      "id": "382497",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Basic Taxation",
+      "instructor": "Philip Gelsomino",
+      "curenroll": "3",
+      "maxenroll": "10",
+      "courseNum": "ACCT-709-01",
+      "courseParentNum": "ACCT-709",
+      "courseId": "183994",
+      "id": "391875",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "2",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "750",
+          "end": "825",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Tax Analysis and Strategy",
+      "instructor": "John Striebich",
+      "curenroll": "2",
+      "maxenroll": "10",
+      "courseNum": "ACCT-710-01",
+      "courseParentNum": "ACCT-710",
+      "courseId": "180139",
+      "id": "382498",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "4",
+          "start": "1050",
+          "end": "1220",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Comparative Financial Statemen",
+      "instructor": "Rong Yang",
+      "curenroll": "1",
+      "maxenroll": "30",
+      "courseNum": "ACCT-740-01",
+      "courseParentNum": "ACCT-740",
+      "courseId": "182028",
+      "id": "386827",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "3015",
+          "day": "1",
+          "start": "1050",
+          "end": "1220",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Acctg Info. \u0026 Analytics",
+      "instructor": "Sriniwas Mahapatro",
+      "curenroll": "7",
+      "maxenroll": "30",
+      "courseNum": "ACCT-745-01",
+      "courseParentNum": "ACCT-745",
+      "courseId": "180984",
+      "id": "384504",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1245",
+          "day": "2",
+          "start": "930",
+          "end": "1005",
+          "off_campus": false
+        },
+        {
+          "bldg": {
+            "code": "LOW",
+            "number": "12"
+          },
+          "room": "1245",
+          "day": "4",
+          "start": "930",
+          "end": "1005",
+          "off_campus": false
+        }
+      ]
+    },
+    {
+      "title": "Cost Mgmnt in Tech.Orgniztions",
+      "instructor": "Kimberly Foreman",
+      "curenroll": "0",
+      "maxenroll": "25",
+      "courseNum": "ACCT-794-01",
+      "courseParentNum": "ACCT-794",
+      "courseId": "180914",
+      "id": "384377",
+      "online": false,
+      "credits": "3",
+      "times": [
+        {
+          "bldg": {
+            "code": "TBA",
+            "number": "TBA"
+          },
+          "room": "TBA",
+          "day": "3",
+          "start": "1050",
+          "end": "1220",
+          "off_campus": false
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:38:15Z",
+    "upstream": "php"
+  }
+}

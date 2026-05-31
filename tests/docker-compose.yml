@@ -1,0 +1,55 @@
+# Conformance-suite stack: seeded DB + PHP reference app + recording proxy.
+# Lives in the outer repo (the schedulemaker/ app is a vendored gitlink, so edits
+# there are not version-controlled). Run from the repo root:
+#
+#   podman compose -f tests/docker-compose.yml up -d      # (or: docker compose ...)
+#
+# Then browse http://localhost:9000 and/or run tests/edge-cases.sh to record goldens.
+services:
+  db:
+    image: docker.io/library/mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: schedulemaker
+      MYSQL_USER: schedulemaker
+      MYSQL_PASSWORD: schedulemaker
+    volumes:
+      - ../schedulemaker.gz:/docker-entrypoint-initdb.d/schedulemaker.sql.gz
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  app:
+    build:
+      context: ../schedulemaker
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_SERVER: db
+      DATABASE_USER: schedulemaker
+      DATABASE_PASS: schedulemaker
+      DATABASE_DB: schedulemaker
+      HTTPROOTADDRESS: http://localhost:8080/
+      SERVER_TYPE: development
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  proxy:
+    build:
+      context: ..
+      dockerfile: tests/cmd/recordproxy/Dockerfile
+    environment:
+      UPSTREAM: http://app:8080
+      FIXTURE_DIR: /fixtures
+      DB_DUMP: schedulemaker.gz
+      UPSTREAM_NAME: php
+    volumes:
+      - ./fixtures:/fixtures
+    ports:
+      - "9000:9000"
+    depends_on:
+      - app
+
+volumes:
+  db-data:

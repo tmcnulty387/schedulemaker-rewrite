@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "path": "/entity/getCourses",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "department=1",
+  "status": 200,
+  "respBody": {
+    "error": "argument",
+    "msg": "You must provide a valid term"
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:55:51Z",
+    "upstream": "php"
+  }
+}

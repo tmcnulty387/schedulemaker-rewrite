@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "path": "/search/find",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "term=20261\u0026title=zzzzznotacourse",
+  "status": 200,
+  "respBody": {
+    "error": "result",
+    "msg": "No courses matched your criteria"
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:55:51Z",
+    "upstream": "php"
+  }
+}

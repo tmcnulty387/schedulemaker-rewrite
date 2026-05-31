@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "path": "/generate/getCourseOpts",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "term=20261",
+  "status": 200,
+  "respBody": {
+    "error": "argument",
+    "msg": "You must provide at least one partial course number"
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:38:15Z",
+    "upstream": "php"
+  }
+}

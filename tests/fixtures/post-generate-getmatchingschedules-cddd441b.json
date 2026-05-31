@@ -1,0 +1,17 @@
+{
+  "method": "POST",
+  "path": "/generate/getMatchingSchedules",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "courseCount=0\u0026nonCourseCount=0\u0026noCourseCount=0",
+  "status": 200,
+  "respBody": {
+    "error": "user",
+    "msg": "Cannot generate schedules because no courses or course items were provided"
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:38:15Z",
+    "upstream": "php"
+  }
+}

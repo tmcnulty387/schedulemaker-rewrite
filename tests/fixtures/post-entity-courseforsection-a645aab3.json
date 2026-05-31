@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/entity/courseForSection",
+  "query": "",
+  "contentType": "application/x-www-form-urlencoded",
+  "reqBody": "id=999999999",
+  "status": 200,
+  "respBody": {
+    "error": "php",
+    "msg": "A internal server error occurred",
+    "guru": "Undefined index: title",
+    "num": 8,
+    "file": "\/var\/www\/html\/inc\/databaseConn.php:69"
+  },
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T20:38:15Z",
+    "upstream": "php"
+  }
+}

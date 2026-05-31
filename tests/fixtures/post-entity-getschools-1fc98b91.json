@@ -1,0 +1,127 @@
+{
+  "method": "POST",
+  "path": "/entity/getSchools",
+  "query": "",
+  "status": 200,
+  "respBody": [
+    {
+      "id": "2",
+      "number": "01",
+      "code": "SCB",
+      "title": "Saunders College of Business"
+    },
+    {
+      "id": "3",
+      "number": "03",
+      "code": "KGCOE",
+      "title": "Kate Gleason College Of Engineering"
+    },
+    {
+      "id": "4",
+      "number": "05",
+      "code": "CLA",
+      "title": "College of Liberal Arts"
+    },
+    {
+      "id": "5",
+      "number": "06",
+      "code": "CAST",
+      "title": "College of Applied Science \u0026 Technology"
+    },
+    {
+      "id": "6",
+      "number": "08",
+      "code": "NTID",
+      "title": "National Technical Institute for the Deaf"
+    },
+    {
+      "id": "7",
+      "number": "10",
+      "code": "COS",
+      "title": "College of Science"
+    },
+    {
+      "id": "8",
+      "number": "11",
+      "code": null,
+      "title": "Wellness Instructional Program"
+    },
+    {
+      "id": "9",
+      "number": "17",
+      "code": null,
+      "title": "Academic Services"
+    },
+    {
+      "id": "10",
+      "number": "20",
+      "code": "CIAS",
+      "title": "College of Imaging Arts and Sciences"
+    },
+    {
+      "id": "11",
+      "number": "30",
+      "code": null,
+      "title": "Interdisciplinary Studies"
+    },
+    {
+      "id": "12",
+      "number": "40",
+      "code": "GCCIS",
+      "title": "Golisano College of Computing and Information Sciences"
+    },
+    {
+      "id": "13",
+      "number": "50",
+      "code": "GIS",
+      "title": "Golisano Institute For Sustainability"
+    },
+    {
+      "id": "20",
+      "number": null,
+      "code": "CHST",
+      "title": "College of Health Sciences and Technology"
+    },
+    {
+      "id": "23",
+      "number": null,
+      "code": "STUAF",
+      "title": "Student Affairs"
+    },
+    {
+      "id": "25",
+      "number": null,
+      "code": "INTSD",
+      "title": "Interdisciplinary Studies "
+    },
+    {
+      "id": "26",
+      "number": null,
+      "code": "FNADM",
+      "title": ""
+    },
+    {
+      "id": "27",
+      "number": null,
+      "code": "RITHC",
+      "title": ""
+    },
+    {
+      "id": "29",
+      "number": null,
+      "code": "CAD",
+      "title": "College of Art and Design"
+    },
+    {
+      "id": "30",
+      "number": null,
+      "code": "CET",
+      "title": "College of Engineering Technology"
+    }
+  ],
+  "meta": {
+    "dbDump": "schedulemaker.gz",
+    "recordedAt": "2026-05-31T21:01:06Z",
+    "upstream": "php"
+  }
+}
