@@ -28,6 +28,7 @@ type Fixture struct {
 	Method      string          `json:"method"`
 	Path        string          `json:"path"`
 	Query       string          `json:"query"`
+	Accept      string          `json:"accept,omitempty"`
 	ContentType string          `json:"contentType,omitempty"`
 	ReqBody     string          `json:"reqBody,omitempty"`
 	Status      int             `json:"status"`
@@ -51,13 +52,13 @@ func canonicalParams(raw string) string {
 	return v.Encode() // url.Values.Encode sorts by key
 }
 
-// Key is the dedup identity of a request: method + path + canonical query + body.
+// Key is the dedup identity of a request: method + path + canonical query + accept + body.
 func (f *Fixture) Key() string {
 	body := f.ReqBody
 	if f.isForm() {
 		body = canonicalParams(f.ReqBody)
 	}
-	return f.Method + " " + f.Path + "?" + canonicalParams(f.Query) + "\n" + body
+	return f.Method + " " + f.Path + "?" + canonicalParams(f.Query) + "\nAccept: " + f.Accept + "\n" + body
 }
 
 // slug turns "POST /api/entity/getCourses" into "post-api-entity-getcourses".

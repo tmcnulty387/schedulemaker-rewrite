@@ -90,7 +90,11 @@ func TestConformance(t *testing.T) {
 			if err != nil {
 				t.Fatalf("building request: %v", err)
 			}
-			req.Header.Set("Accept", "application/json")
+			accept := f.Accept
+			if accept == "" {
+				accept = "application/json"
+			}
+			req.Header.Set("Accept", accept)
 			if f.ContentType != "" {
 				req.Header.Set("Content-Type", f.ContentType)
 			}

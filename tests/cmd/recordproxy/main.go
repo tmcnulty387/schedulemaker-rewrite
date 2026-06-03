@@ -84,6 +84,7 @@ func main() {
 			Method:      resp.Request.Method,
 			Path:        resp.Request.URL.Path,
 			Query:       resp.Request.URL.RawQuery,
+			Accept:      resp.Request.Header.Get("Accept"),
 			ContentType: resp.Request.Header.Get("Content-Type"),
 			ReqBody:     string(reqBody),
 			Status:      resp.StatusCode,
